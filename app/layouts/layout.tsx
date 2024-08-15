@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-05-08 22:50:33
+ * @LastEditors: james
+ * @LastEditTime: 2024-08-15 00:01:23
+ * @FilePath: /Next-Web-App/app/layouts/layout.tsx
+ * @Description: Copyright (c) 2024 by yz, All Rights Reserved.
+ */
 import { getCategories } from '#/app/api/categories/getCategories';
 import { ClickCounter } from '#/ui/click-counter';
 import { TabGroup } from '#/ui/tab-group';

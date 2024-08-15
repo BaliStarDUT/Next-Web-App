@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-05-08 22:50:33
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2024-08-15 00:09:07
+ * @FilePath: /Next-Web-App/ui/address-bar.tsx
+ * @Description: Copyright (c) 2024 by yz, All Rights Reserved.
+ */
 'use client';
 
 import React, { Suspense } from 'react';
@@ -40,7 +47,7 @@ export function AddressBar() {
 
   return (
     <div className="flex items-center gap-x-2 p-3.5 lg:px-5 lg:py-3">
-      <div className="text-gray-600">
+      <div className="text-gray-100">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-4"
@@ -56,7 +63,7 @@ export function AddressBar() {
       </div>
       <div className="flex gap-x-1 text-sm font-medium">
         <div>
-          <span className="px-2 text-gray-400">acme.com</span>
+          <span className="px-2 text-gray-200">bing.com.cn</span>
         </div>
         {pathname ? (
           <>

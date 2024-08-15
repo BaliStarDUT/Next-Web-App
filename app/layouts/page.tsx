@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-05-08 22:50:33
+ * @LastEditors: james
+ * @LastEditTime: 2024-08-15 00:02:43
+ * @FilePath: /Next-Web-App/app/layouts/page.tsx
+ * @Description: Copyright (c) 2024 by ${user.name}, All Rights Reserved.
+ */
 import { ExternalLink } from '#/ui/external-link';
 
 export default function Page() {
