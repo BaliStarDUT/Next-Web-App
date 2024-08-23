@@ -28,7 +28,7 @@ jobs:
     - name: Run pnpm install.
       run: pnpm install
     - name: Run npm run build
-      run: pnpm run build --if-present
+      run: pnpm run build
     
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag next-web-app:$(date +%s)
