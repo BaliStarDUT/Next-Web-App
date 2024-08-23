@@ -63,11 +63,11 @@ export function AddressBar() {
       </div>
       <div className="flex gap-x-1 text-sm font-medium">
         <div>
-          <span className="px-2 text-gray-200">bing.com.cn</span>
+          <span className="px-2 text-lime-200">bing.com.cn</span>
         </div>
         {pathname ? (
           <>
-            <span className="text-gray-600">/</span>
+            <span className="text-lime-900">/</span>
             {pathname
               .split('/')
               .slice(2)
@@ -77,7 +77,7 @@ export function AddressBar() {
                     <span>
                       <span
                         key={segment}
-                        className="animate-[highlight_1s_ease-in-out_1] rounded-full px-1.5 py-0.5 text-gray-100"
+                        className="animate-[highlight_1s_ease-in-out_1] rounded-full px-1.5 py-0.5 text-lime-200"
                       >
                         {segment}
                       </span>

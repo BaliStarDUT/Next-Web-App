@@ -8,6 +8,7 @@ import { ProductUsedPrice } from '#/ui/product-used-price';
 import { dinero, type DineroSnapshot } from 'dinero.js';
 import { Suspense } from 'react';
 import { AddToCart } from './add-to-cart';
+import { USD } from '@dinero.js/currencies';
 
 function LoadingDots() {
   return (
@@ -28,19 +29,39 @@ function LoadingDots() {
 }
 
 async function UserSpecificDetails({ productId }: { productId: string }) {
-  const data = await fetch(
-    `https://app-dir.vercel.app/api/products?id=${productId}&delay=500&filter=price,usedPrice,leadTime,stock`,
-    {
-      // We intentionally disable Next.js Cache to better demo
-      // streaming
-      cache: 'no-store',
-    },
-  );
+  const url = `https://app-dir.vercel.app/api/products?id=${productId}&delay=500&filter=price,usedPrice,leadTime,stock`;
+  console.log(url);
+  // const data = await fetch(
+  // url,{
+  // We intentionally disable Next.js Cache to better demo
+  // streaming
+  // cache: 'no-store',
+  // },
+  // );
+  // console.log(data);
 
-  const product = (await data.json()) as Product;
-
-  const price = dinero(product.price as DineroSnapshot<number>);
-
+  // const product = (await data.json()) as Product;
+  // const price = dinero(product.price as DineroSnapshot<number>);
+  const price = dinero({
+    amount: 500,
+    currency: USD,
+  } as DineroSnapshot<number>);
+  // type UsedPrice = {
+  //   amount: number;
+  //   currency: Currency;
+  //   scale: number;
+  // };
+  const discount1 = {
+    percent: 9,
+    expires: 100,
+  };
+  const product = {
+    usedPrice: { amount: 510, currency: USD, scale: 2 },
+    leadTime: 100,
+    stock: 12,
+    usedPriceRaw: 100,
+    discount: discount1,
+  };
   return (
     <>
       <ProductSplitPayments price={price} />
@@ -62,8 +83,12 @@ export function Pricing({
   product: Product;
   cartCount: string;
 }) {
-  const price = dinero(product.price as DineroSnapshot<number>);
-
+  const price = dinero({
+    amount: 12100,
+    currency: USD,
+    scale: 2,
+  } as DineroSnapshot<number>);
+  console.log(product.discount);
   return (
     <div className="space-y-4 rounded-lg bg-gray-900 p-3">
       <ProductPrice price={price} discount={product.discount} />
