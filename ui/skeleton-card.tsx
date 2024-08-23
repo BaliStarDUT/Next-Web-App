@@ -7,10 +7,10 @@ export const SkeletonCard = ({ isLoading }: { isLoading?: boolean }) => (
         isLoading,
     })}
   >
-    <div className="space-y-3">
-      <div className="h-14 rounded-lg bg-gray-700" />
-      <div className="h-3 w-11/12 rounded-lg bg-gray-700" />
-      <div className="h-3 w-8/12 rounded-lg bg-gray-700" />
+    <div className="space-y-3,text-gray-300">
+      <div className="h-14 rounded-lg bg-gray-700">Header</div>
+      <div className="h-3 w-11/12 rounded-lg bg-gray-500">Loading</div>
+      <div className="h-3 w-8/12 rounded-lg bg-gray-300">Tail</div>
     </div>
   </div>
 );

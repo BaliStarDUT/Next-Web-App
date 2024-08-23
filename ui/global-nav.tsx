@@ -14,7 +14,7 @@ export function GlobalNav() {
   const close = () => setIsOpen(false);
 
   return (
-    <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-black lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
+    <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-lime-950 lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
       <div className="flex h-14 items-center px-4 py-4 lg:h-auto">
         <Link
           href="/"
@@ -25,8 +25,8 @@ export function GlobalNav() {
             <NextLogo />
           </div>
 
-          <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
-            App Router
+          <h3 className="font-semibold tracking-wide text-gray-100 group-hover:text-gray-50">
+            App Router路由
           </h3>
         </Link>
       </div>
@@ -35,7 +35,7 @@ export function GlobalNav() {
         className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="font-medium text-gray-100 group-hover:text-gray-400">
+        <div className="font-medium text-white group-hover:text-lime-400">
           Menu
         </div>
         {isOpen ? (
@@ -47,7 +47,7 @@ export function GlobalNav() {
 
       <div
         className={clsx('overflow-y-auto lg:static lg:block', {
-          'fixed inset-x-0 bottom-0 top-14 mt-px bg-black': isOpen,
+          'fixed inset-x-0 bottom-0 top-14 mt-px bg-blue-300': isOpen,
           hidden: !isOpen,
         })}
       >
@@ -55,7 +55,7 @@ export function GlobalNav() {
           {demos.map((section) => {
             return (
               <div key={section.name}>
-                <div className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-400/80">
+                <div className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-lime-100">
                   <div>{section.name}</div>
                 </div>
 
@@ -91,8 +91,8 @@ function GlobalNavItem({
       className={clsx(
         'block rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300',
         {
-          'text-gray-400 hover:bg-gray-800': !isActive,
-          'text-white': isActive,
+          'text-white hover:bg-lime-800': !isActive,
+          'text-lime-600': isActive,
         },
       )}
     >

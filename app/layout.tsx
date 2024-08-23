@@ -29,19 +29,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="[color-scheme:dark]">
-      <body className="bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] pb-36">
+      <body className="overflow-y-scroll bg-gray-100 pb-36">
         <GlobalNav />
 
         <div className="lg:pl-72">
           <div className="mx-auto max-w-4xl space-y-8 px-2 pt-20 lg:px-8 lg:py-8">
-            <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
-              <div className="rounded-lg bg-black">
+            <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-slate-950">
+              <div className="rounded-lg bg-slate-400">
                 <AddressBar />
               </div>
             </div>
 
             <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
-              <div className="rounded-lg bg-black p-3.5 lg:p-6">{children}</div>
+              <div className="rounded-lg bg-gray-800 p-3.5 lg:p-6">
+                {children}
+              </div>
             </div>
             <Byline className="fixed sm:hidden" />
           </div>
