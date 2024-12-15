@@ -36,6 +36,7 @@ export default function Page() {
             browser. Notice you can choose what UI to show parallel routes that
             don&apos;t match the initial URL.
           </li>
+          <li>a new li</li>
         </ul>
         <div className="flex gap-2">
           <ExternalLink href="https://nextjs.org/docs/app/building-your-application/routing/parallel-routes">
