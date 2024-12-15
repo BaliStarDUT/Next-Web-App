@@ -9,6 +9,11 @@ export const demos: { name: string; items: Item[] }[] = [
     name: 'Layouts===',
     items: [
       {
+        name: '新路由0',
+        slug: 'new-route-0',
+        description: '在1个layout中render多个pages',
+      },
+      {
         name: 'Nested Layouts---',
         slug: 'layouts',
         description: 'Create UI that is shared across routes',
@@ -23,11 +28,22 @@ export const demos: { name: string; items: Item[] }[] = [
         slug: 'parallel-routes',
         description: 'Render multiple pages in the same layout',
       },
+      {
+        name: '新路由1',
+        slug: 'new-route-1',
+        description: '在1个layout中render多个pages',
+      },
     ],
   },
   {
     name: 'File Conventions',
     items: [
+      {
+        name: '加载中',
+        slug: 'loading-0',
+        description:
+          '对应用的部分获取数据的场景，进行loading等待，避免页面白屏',
+      },
       {
         name: 'Loading',
         slug: 'loading',
