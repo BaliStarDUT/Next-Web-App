@@ -5,9 +5,9 @@ import { Gallery } from 'next-gallery';
 export default function Page() {
   const images = [
     // { src: 'https://picsum.photos/id/1018/1920/1080/', aspect_ratio: 16 / 9 },
-    // { src: 'https://picsum.photos/id/1015/1920/1080/', aspect_ratio: 16 / 9 },
-    // { src: 'https://picsum.photos/id/1019/1440/1080/', aspect_ratio: 4 / 3 },
-    // { src: 'https://picsum.photos/id/1011/1080/1920/', aspect_ratio: 9 / 16 },
+    { src: '/pid_2_1.jpg', aspect_ratio: 16 / 9 },
+    { src: '/pid_1_1.jpg', aspect_ratio: 9 / 16 },
+    { src: '/pid_0_1.jpg', aspect_ratio: 9 / 16 },
     { src: 'https://picsum.photos/id/1012/1920/1080/', aspect_ratio: 16 / 9 },
     { src: 'https://picsum.photos/id/1013/1080/1920/', aspect_ratio: 9 / 16 },
     { src: 'https://picsum.photos/id/1014/1080/1920/', aspect_ratio: 9 / 16 },
@@ -28,7 +28,6 @@ export default function Page() {
   return (
     <div className="prose prose-sm prose-invert max-w-none">
       <h1 className="text-xl font-bold">Instant Loading States</h1>
-
       <ul>
         <li>
           这类页面使用 <code>loading.js</code>{' '}
@@ -38,27 +37,41 @@ export default function Page() {
         <li>
           导航是可中断的。尝试在一个category页面中导航，然后点击另一个category页面，看看第一个页面是否仍然可以被交互。
         </li>
-        <li>
-          <div>
-            <Image
-              src="/eniko-kis-KsLPTsYaqIQ-unsplash.jpg"
-              width={1500}
-              height={500}
-              alt="Picture of the author"
-            />
-          </div>
-        </li>
-        <li>
-          <div className="flex flex-col gap-10">
-            <Gallery
-              {...{ widths, ratios, images }}
-              lastRowBehavior="match-previous"
-            />
-          </div>
-        </li>
       </ul>
+      {/* <div className="flex flex-col gap-10">
+        <Gallery
+          {...{ widths, ratios, images }}
+          lastRowBehavior="match-previous"
+        />
+      </div> */}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="flex">
+          <Image
+            src="/pid_1_1.jpg"
+            width={690 / 2}
+            height={1035 / 2}
+            alt="Picture of the author"
+          />
+        </div>
+        <div className="flex">
+          <Image
+            src="/pid_0_1.jpg"
+            width={2000 / 6}
+            height={3006 / 6}
+            alt="Picture of the author"
+          />
+        </div>
+        <div className="flex">
+          <Image
+            src="/pid_2_1.jpg"
+            width={2000 / 6}
+            height={1282 / 6}
+            alt="Picture of the author"
+          />
+        </div>
+      </div>
 
-      <div className="flex gap-2">
+      <div className="flex gap-10">
         <ExternalLink href="https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming">
           Docs
         </ExternalLink>

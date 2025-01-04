@@ -14,7 +14,7 @@ export function GlobalNav() {
   const close = () => setIsOpen(false);
 
   return (
-    <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-lime-950 lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
+    <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-sky-800 lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
       <div className="flex h-14 items-center px-4 py-4 lg:h-auto">
         <Link
           href="/"
@@ -35,7 +35,7 @@ export function GlobalNav() {
         className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="font-medium text-white group-hover:text-lime-400">
+        <div className="font-medium text-white group-hover:text-sky-800">
           Menu
         </div>
         {isOpen ? (
@@ -91,8 +91,8 @@ function GlobalNavItem({
       className={clsx(
         'block rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300',
         {
-          'text-white hover:bg-lime-800': !isActive,
-          'text-lime-600': isActive,
+          'text-white hover:bg-sky-600': !isActive,
+          'text-sky-600': isActive,
         },
       )}
     >
