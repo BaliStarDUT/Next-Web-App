@@ -6,6 +6,7 @@ import type { Category } from './category';
 // doesn't currently use sensitive environment variables, it's
 // good practise to add `server-only` preemptively.
 import 'server-only';
+import { log } from 'console';
 
 export async function getCategories({ parent }: { parent?: string } = {}) {
   const res = await fetch(
@@ -13,6 +14,7 @@ export async function getCategories({ parent }: { parent?: string } = {}) {
       parent ? `?parent=${parent}` : ''
     }`,
   );
+  console.log('====>' + res);
 
   if (!res.ok) {
     // Render the closest `error.js` Error Boundary
@@ -20,6 +22,7 @@ export async function getCategories({ parent }: { parent?: string } = {}) {
   }
 
   const categories = (await res.json()) as Category[];
+  log('---->' + categories);
 
   if (categories.length === 0) {
     // Render the closest `not-found.js` Error Boundary

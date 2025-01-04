@@ -1,6 +1,7 @@
 import type { Category } from '#/app/api/categories/category';
 import { SkeletonCard } from '#/ui/skeleton-card';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 export default async function Page({
   params,
@@ -42,8 +43,16 @@ export default async function Page({
       <h1 className="text-xl font-medium text-gray-100">{category.name}</h1>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <SkeletonCard key={i} />
+        {Array.from({ length: category.count }).map((_, i) => (
+          <div className="flex">
+            {/* <SkeletonCard key={i} /> */}
+            <Image
+              src="/pid_0_1.jpg"
+              width={2000 / 6}
+              height={3006 / 6}
+              alt="Picture of the author"
+            />
+          </div>
         ))}
       </div>
     </div>
